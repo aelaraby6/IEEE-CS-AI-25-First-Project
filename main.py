@@ -55,7 +55,21 @@ def main():
             # Update book logic here
             pass
         elif choice == "5":
-            # Delete book logic here
+                    elif choice == "5":
+            if not library:
+                print("There are no books to delete")
+            else:
+                delete_id = input("Enter the book id: ")
+                found = False
+                for book in library:
+                    if book.book_id == delete_id:
+                        library.remove(book)
+                        print("The book has been deleted")
+                        found = True
+                        break
+                if not found:
+                    print("The book was not found")
+
             pass
         elif choice == "6":
             print("Exiting the system. Goodbye!")
