@@ -14,6 +14,7 @@ def menu():
         
 
 def main():
+    global book
     library = []  # List to store books
     
     while True:
@@ -52,8 +53,36 @@ def main():
             if not found:
                 print("Book not found.")
         elif choice == "4":
-            # Update book logic here
-            pass
+                title_or_id = input("Would you like to update (1) Book ID or (2) Title? Enter 1 or 2: ")
+
+                if title_or_id == "1":
+                    current_id = input("Enter the current Book ID you want to update: ")
+                    found = False
+                    for book in library:
+                        if book.get_book_id() == current_id:
+                            found = True
+                            new_id = input("Enter the new Book ID to replace the old one: ")
+                            book.set_book_id(new_id)
+                            print(f"Book ID updated successfully!")
+                            break
+                    if not found:
+                        print("Book not found.")
+
+                elif title_or_id == "2":
+                    current_title = input("Enter the current Book Title you want to update: ")
+                    found = False
+                    for book in library:
+                        if book.get_title().lower() == current_title.lower():
+                            found = True
+                            new_title = input("Enter the new Book Title to replace the old one: ")
+                            book.set_title(new_title)
+                            print(f"Book Title updated successfully!")
+                            break
+                    if not found:
+                        print("Book not found.")
+
+                else:
+                    print("Invalid choice! Please enter 1 or 2.")
         elif choice == "5":
                     elif choice == "5":
             if not library:
