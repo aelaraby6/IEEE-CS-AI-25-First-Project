@@ -38,7 +38,4 @@ This project uses the following Python libraries:
    - A built-in Python library that provides an interface to SQLite databases, used to save and retrieve book data from the SQLite database (`library.db`).
    - Installation: Already included with Python (no need for extra installation).
 
-5. **os**:  
-   - Used to clear the console screen to keep the interface clean during operation.
-   - This is a built-in Python library, so no installation is needed.
 
