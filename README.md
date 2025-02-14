@@ -6,10 +6,16 @@ This is a Library Management System built using Python, which helps to manage bo
 
 - Add a new book to the library
 - View all books in the library
+
+![output](https://github.com/user-attachments/assets/e9ec75da-7131-4f05-9ede-b4d48c71ca0d)
+
 - Search for a book by ID or Title
 - Update book information
 - Delete a book from the library
 - Save and load books to/from an Excel file (`library.xlsx`)
+
+![excel](https://github.com/user-attachments/assets/30eefda4-72d1-4e1c-ad57-7e16478f5022)
+
 - Save and load books to/from an SQLite database (`library.db`)
 
 ## Libraries Used
