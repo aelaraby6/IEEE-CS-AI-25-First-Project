@@ -4,7 +4,6 @@ import database
 import data
 
 def main():
-    global book
     library = [] 
     
     while True:

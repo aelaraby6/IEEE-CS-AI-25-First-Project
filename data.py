@@ -8,7 +8,7 @@ attributes = {
 
 class LibraryOptions:
 
-    def dataOptions(self):
+    def dataOptions():
         print("\nUpdate Options:")
         print("1. Book ID")
         print("2. Title")
@@ -16,7 +16,7 @@ class LibraryOptions:
         print("4. Publication Year")
         print("5. Publisher")
 
-    def menu(self):
+    def menu():
         print("\nLibrary Management System")
         print("1. Add Book")
         print("2. View Books")
