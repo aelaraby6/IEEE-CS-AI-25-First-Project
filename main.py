@@ -1,67 +1,49 @@
 from book import Book
-import os  
-
-
-# main menu
-def menu():
-        print("\nLibrary Management System")
-        print("1. Add Book")
-        print("2. View Books")
-        print("3. Search Book")
-        print("4. Update Book Details")
-        print("5. Delete Book")
-        print("6. Exit")
-        
+import libraryManager
+import database
+import data
 
 def main():
-    library = []  # List to store books
-    
+    library = []
+
     while True:
-        menu()
+        data.LibraryOptions.menu()
         choice = input("Enter your choice: ")
-        print(f"\n")
+        print("\n")
 
         if choice == "1":
-            book_id = input("Enter Book ID: ")
-            title = input("Enter Title: ")
-            author = input("Enter Author: ")
-            publication_year = input("Enter Publication Year: ")
-            publisher = input("Enter Publisher: ")
-            
-            new_book = Book(book_id, title, author, publication_year, publisher)
-            library.append(new_book)
-            print("Book added successfully!")
-            os.system("cls" if os.name == "nt" else "clear")
-
+            libraryManager.addBook(library)
         
         elif choice == "2":
-            if not library:
-                print("No books available.")
-            else:
-                for book in library:
-                    book.display_book() 
+            libraryManager.viewBooks(library)
         
         elif choice == "3":
-            search = input("Enter Book ID or Title to search: ")
-            found = False
-            for book in library:
-                if book.book_id == search or book.title.lower() == search.lower():
-                    book.display_book()
-                    found = True
-                    break
-            if not found:
-                print("Book not found.")
+            libraryManager.searchBook(library)
+        
         elif choice == "4":
-            # Update book logic here
-            pass
+            libraryManager.updateBook(library)
+        
         elif choice == "5":
-            # Delete book logic here
-            pass
+            libraryManager.deleteBook(library)
+        
         elif choice == "6":
-            print("Exiting the system. Goodbye!")
+            database.saveBookstoDB(library)
+        
+        elif choice == "7":
+            database.loadBooksfromDb(library)
+        
+        elif choice == "8":
+            libraryManager.save_books_to_excel(library)
+        
+        elif choice == "9":
+            libraryManager.load_books_from_excel(library)
+        
+        elif choice == "10":
+            print("Exiting the system")
             break
+        
         else:
-            print("Invalid choice! Please enter a number between 1-6.")
+            print("Invalid choice! Please enter a number between 1-10.")
 
 if __name__ == "__main__":
     main()
