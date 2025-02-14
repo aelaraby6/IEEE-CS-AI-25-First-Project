@@ -73,7 +73,7 @@ def searchBook(library):
         print(f"An unexpected error occurred while searching for the book: {e}")
         os.system("cls" if os.name == "nt" else "clear")
 
-# Display Books
+# view Books
 def viewBooks(library):
     try:
         os.system("cls" if os.name == "nt" else "clear")
